@@ -21,4 +21,14 @@ public class UserRepository {
         return false;
     }
 
+    public void logOut(){
+            for (User user : data){
+                if(user.admin){
+                    return;
+                } else {
+                    user.loginOut();
+                }
+            }
+    }
+
 }
