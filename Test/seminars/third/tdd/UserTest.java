@@ -9,9 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class UserTest {
     @Test
     void checkAdmin(){
-        User firstAdmin = new User("Ivan","12345",true);
-        firstAdmin.getAdmin();
-        assertThat(firstAdmin.admin).isEqualTo(true);
+
+        UserRepository userRepository = new UserRepository();
+        User firstUser = new User("Ivan","12345",false);
+        userRepository.logOut();
+        assertThat(firstUser.login).isEqualTo(false);
     }
 
 }
